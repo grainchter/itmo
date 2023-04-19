@@ -4,6 +4,78 @@ import s from "./style.module.scss";
 import { ProgressIconBig } from "../../../image/svg/ProgressIconBig";
 
 let Main = () => {
+  let DATA = [
+    {
+      title: "Начало работы",
+      forWhom: "Для новичка",
+      section: "Основы работы",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+
+      completed: false,
+      progress: 8,
+      countTask: 10,
+      started: true,
+      buttonText: "Продолжить",
+    },
+    {
+      title: "Работа с библиотеками GPN",
+      forWhom: "Профессионалу",
+      section: "Библиотеки",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+
+      completed: false,
+      progress: 0,
+      countTask: 255,
+      started: false,
+    },
+    {
+      title: "Введение в рабочую среду",
+      forWhom: "Профессионалу",
+      section: "Библиотеки",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+      completed: false,
+      progress: 0,
+      countTask: 10,
+      started: false,
+    },
+    {
+      title: "Начало работы",
+      forWhom: "Для новичка",
+      section: "Основы работы",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+      completed: false,
+      progress: 3,
+      countTask: 10,
+      started: true,
+    },
+    {
+      title: "Работа с библиотеками GPN",
+      forWhom: "Профессионалу",
+      section: "Библиотеки",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+      completed: false,
+      progress: 0,
+      countTask: 255,
+      started: false,
+    },
+    {
+      title: "Введение в рабочую среду ",
+      forWhom: "Профессионалу",
+      section: "Библиотеки",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+      completed: false,
+      progress: 0,
+      countTask: 10,
+      started: false,
+    },
+  ];
+
   const [activeBtn, setActiveBtn] = useState<string>("btn1");
 
   return (
@@ -146,81 +218,108 @@ let Main = () => {
               Не пройденные
             </button>
           </div>
-          <div className={s.content}>
-            <Card
-              title={"Начало работы"}
-              forWhom={"Для новичка"}
-              section={"Основы работы"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={8}
-              countTask={10}
-              started={true}
-              buttonText={"Продолжить"}
-            />
 
-            <Card
-              title={"Работа с библиотеками GPN"}
-              forWhom={"Профессионалу"}
-              section={"Библиотеки"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={0}
-              countTask={255}
-              started={false}
-            />
-            <Card
-              title={"Введение в рабочую среду "}
-              forWhom={"Профессионалу"}
-              section={"Библиотеки"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={0}
-              countTask={10}
-              started={false}
-            />
-            <Card
-              title={"Начало работы"}
-              forWhom={"Для новичка"}
-              section={"Основы работы"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={3}
-              countTask={10}
-              started={true}
-            />
-            <Card
-              title={"Работа с библиотеками GPN"}
-              forWhom={"Профессионалу"}
-              section={"Библиотеки"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={0}
-              countTask={255}
-              started={false}
-            />
-            <Card
-              title={"Введение в рабочую среду "}
-              forWhom={"Профессионалу"}
-              section={"Библиотеки"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={0}
-              countTask={10}
-              started={false}
-            />
+          <div className={s.content}>
+            {activeBtn === "btn1" &&
+              DATA &&
+              DATA.map((item: any, i: any) => (
+                <Card
+                  key={i}
+                  title={item.title}
+                  forWhom={item.forWhom}
+                  section={item.section}
+                  description={item.description}
+                  completed={item.completed}
+                  progress={item.progress}
+                  countTask={item.countTask}
+                  started={item.started}
+                  buttonText={item.buttonText}
+                />
+              ))}
+
+            {activeBtn === "btn2" &&
+              DATA &&
+              DATA.map(
+                (item: any, i: any) =>
+                  item.section &&
+                  item.section === "Основы работы" && (
+                    <Card
+                      key={i}
+                      title={item.title}
+                      forWhom={item.forWhom}
+                      section={item.section}
+                      description={item.description}
+                      completed={item.completed}
+                      progress={item.progress}
+                      countTask={item.countTask}
+                      started={item.started}
+                      buttonText={item.buttonText}
+                    />
+                  )
+              )}
+
+            {activeBtn === "btn3" &&
+              DATA &&
+              DATA.map(
+                (item: any, i: any) =>
+                  item.section &&
+                  item.section === "Библиотеки" && (
+                    <Card
+                      key={i}
+                      title={item.title}
+                      forWhom={item.forWhom}
+                      section={item.section}
+                      description={item.description}
+                      completed={item.completed}
+                      progress={item.progress}
+                      countTask={item.countTask}
+                      started={item.started}
+                      buttonText={item.buttonText}
+                    />
+                  )
+              )}
+
+            {activeBtn === "btn4" &&
+              DATA &&
+              DATA.map(
+                (item: any, i: any) =>
+                  item.completed &&
+                  item.completed === true && (
+                    <Card
+                      key={i}
+                      title={item.title}
+                      forWhom={item.forWhom}
+                      section={item.section}
+                      description={item.description}
+                      completed={item.completed}
+                      progress={item.progress}
+                      countTask={item.countTask}
+                      started={item.started}
+                      buttonText={item.buttonText}
+                    />
+                  )
+              )}
+
+            {activeBtn === "btn5" &&
+              DATA &&
+              DATA.map(
+                (item: any, i: any) =>
+                  item.completed &&
+                  item.completed === false && (
+                    <Card
+                      key={i}
+                      title={item.title}
+                      forWhom={item.forWhom}
+                      section={item.section}
+                      description={item.description}
+                      completed={item.completed}
+                      progress={item.progress}
+                      countTask={item.countTask}
+                      started={item.started}
+                      buttonText={item.buttonText}
+                    />
+                  )
+              )}
           </div>
         </div>
       </div>

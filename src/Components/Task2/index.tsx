@@ -53,9 +53,11 @@ let Task2 = () => {
   return (
     <div className={s.container}>
       <div className={s.box}>
+        <h1>ВаС ВыЧиСлИлИ пО АйСиКьЮ</h1>
       <p>Текущий город: {currentCityLocationCity}</p>
       <p>Широта: {latValue}</p>
       <p>Долгота: {lonValue}</p>
+      <p>Милота: 10/10</p>
       </div>
     </div>
   );
