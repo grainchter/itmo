@@ -1,0 +1,10 @@
+.svg {
+  svg {
+    transform: rotate(-90deg);
+  }
+  
+  .percent {
+    stroke-dasharray: 100;
+    stroke-dashoffset: calc(100 - var(--val));
+  }
+}
