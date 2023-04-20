@@ -1,4 +1,4 @@
-[DEMO](https://grainchter.github.io/itmo/)
+## Посмотреть [Live DEMO](https://grainchter.github.io/itmo/)
 
 ## Инструкция по запуску
 
