@@ -1,4 +1,4 @@
-[DEMO]([https://github.com/facebook/create-react-app](https://grainchter.github.io/itmo/)).
+[DEMO](https://grainchter.github.io/itmo/)
 
 ## Инструкция по запуску
 
