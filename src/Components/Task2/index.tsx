@@ -40,9 +40,9 @@ let Task2 = () => {
       .catch((error) => console.log("error", error));
   };
 
-    let getCurrentCity = (result: any) => {
+  let getCurrentCity = (result: any) => {
     if (result) {
-      setCurrentCityLocationCity(result.suggestions[0].value);
+      setCurrentCityLocationCity(result.suggestions[1].value);
     }
   };
 
@@ -54,10 +54,10 @@ let Task2 = () => {
     <div className={s.container}>
       <div className={s.box}>
         <h1>ВаС ВыЧиСлИлИ пО АйСиКьЮ</h1>
-      <p>Текущий город: {currentCityLocationCity}</p>
-      <p>Широта: {latValue}</p>
-      <p>Долгота: {lonValue}</p>
-      <p>Милота: 10/10</p>
+        <p>Текущий город: {currentCityLocationCity}</p>
+        <p>Широта: {latValue}</p>
+        <p>Долгота: {lonValue}</p>
+        <p>Милота: 10/10</p>
       </div>
     </div>
   );

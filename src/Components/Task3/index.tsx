@@ -8,7 +8,8 @@ interface IResult {
 }
 
 let Task3 = () => {
-  const [selectedInputId, setSelectedInputId] = useState<string>("input_id1");
+  const [selectedInputId, setSelectedInputId] = useState<string>("");
+  const [selectedInput, setSelectedInput] = useState<string>("");
   const [innData, setInnData] = useState<Array<IResult>>();
   const [nameData, setNameData] = useState<Array<IResult>>();
   const [addressData, setAddressData] = useState<Array<IResult>>();
@@ -65,6 +66,7 @@ let Task3 = () => {
   };
 
   let parseINNResult = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedInput(selectedInputId);
     setMainPartyData(null);
     setFilialsPartyData(undefined);
     setSelectedByInn(e.target.value);
@@ -82,6 +84,7 @@ let Task3 = () => {
   };
 
   let parseNameResult = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedInput(selectedInputId);
     setMainPartyData(null);
     setFilialsPartyData(undefined);
     setSelectedByName(e.target.value);
@@ -99,6 +102,7 @@ let Task3 = () => {
   };
 
   let parseAddressResult = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedInput(selectedInputId);
     setMainPartyData(null);
     setFilialsPartyData(undefined);
     setSelectedByAddress(e.target.value);
@@ -128,6 +132,7 @@ let Task3 = () => {
   };
 
   let selectedItem = async (element: any) => {
+    setSelectedInput(selectedInputId);
     setMainPartyData(null);
     setFilialsPartyData(undefined);
     let data = await getPartyInfo(element);
@@ -159,6 +164,11 @@ let Task3 = () => {
               onFocus={() => {
                 setSelectedInputId("input_id1");
               }}
+              style={
+                selectedInput === "input_id1"
+                  ? { color: "#0078D2" }
+                  : { color: "black" }
+              }
             />
             <div
               className={s.dropdown}
@@ -193,6 +203,11 @@ let Task3 = () => {
               onFocus={() => {
                 setSelectedInputId("input_id2");
               }}
+              style={
+                selectedInput === "input_id2"
+                  ? { color: "#0078D2" }
+                  : { color: "black" }
+              }
             />
             <div
               className={s.dropdown}
@@ -227,6 +242,11 @@ let Task3 = () => {
               onFocus={() => {
                 setSelectedInputId("input_id3");
               }}
+              style={
+                selectedInput === "input_id3"
+                  ? { color: "#0078D2" }
+                  : { color: "black" }
+              }
             />
             <div
               className={s.dropdown}

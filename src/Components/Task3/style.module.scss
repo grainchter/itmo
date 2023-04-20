@@ -38,7 +38,10 @@
         padding: 15px 0 15px 15px;
 
         & > p {
-          height: 35px;
+          height: max-content;
+          min-height: 35px;
+          border-bottom: 1px solid rgba(0, 65, 102, 0.2);
+
         }
       }
     }

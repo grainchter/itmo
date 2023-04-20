@@ -28,6 +28,8 @@ let Card = ({
 }: PCard) => {
   return (
     <div className={s.content}>
+      
+      
       <p className={s.title}>{title}</p>
       <div className={s.about}>
         <p>{forWhom}</p>

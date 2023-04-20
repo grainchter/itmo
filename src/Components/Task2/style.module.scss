@@ -6,6 +6,10 @@
   height: 100vh;
   display: grid;
   place-items: center;
+  background-image: url('./../../image/1643855983_1-abrakadabra-fun-p-kot-khaker-3.jpg'), url('./../../image/3ee7c609a647d3e26df862e1d8277a97.jpg');
+  background-position: top 50px left 50px, bottom 50px right 50px;
+  background-size: 20% auto, 20% auto;
+  background-repeat: no-repeat, no-repeat;
 
   .box {
     width: max-content;
@@ -62,6 +66,10 @@
     height: 100vh;
     display: grid;
     place-items: center;
+    background-image: url('./../../image/1643855983_1-abrakadabra-fun-p-kot-khaker-3.jpg'), url('./../../image/3ee7c609a647d3e26df862e1d8277a97.jpg');
+    background-position: top 50px left 50px, bottom 50px right 50px;
+    background-size: 50% auto, 50% auto;
+    background-repeat: no-repeat, no-repeat;
   
     .box {
       width: max-content;

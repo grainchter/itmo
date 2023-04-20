@@ -2,8 +2,49 @@ import { useState } from "react";
 import Card from "./Card";
 import s from "./style.module.scss";
 import { ProgressIconBig } from "../../../image/svg/ProgressIconBig";
+import { Icon5 } from "../../../image/svg/Icon5";
+import { Icon6 } from "../../../image/svg/Icon6";
 
 let Main = () => {
+  let DATA_BLOCK2 = [
+    {
+      title: "Добро пожаловать",
+      forWhom: "Для новичка",
+      section: "Основы работы",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+
+      progress: 10,
+      countTask: 10,
+      started: true,
+      completed: true,
+    },
+    {
+      title: "Начало работы",
+      forWhom: "Для новичка",
+      section: "Основы работы",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+
+      progress: 8,
+      countTask: 10,
+      started: true,
+      completed: false,
+    },
+    {
+      title: "Введение в рабочую среду",
+      forWhom: "Для новичка",
+      section: "Основы работы",
+      description:
+        "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+
+      progress: 8,
+      countTask: 10,
+      started: false,
+      completed: false,
+    },
+  ];
+
   let DATA = [
     {
       title: "Начало работы",
@@ -12,11 +53,11 @@ let Main = () => {
       description:
         "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
 
-      completed: false,
       progress: 8,
       countTask: 10,
       started: true,
       buttonText: "Продолжить",
+      completed: false,
     },
     {
       title: "Работа с библиотеками GPN",
@@ -77,6 +118,7 @@ let Main = () => {
   ];
 
   const [activeBtn, setActiveBtn] = useState<string>("btn1");
+  const [hideCompleted, setHideCompleted] = useState<boolean>(false);
 
   return (
     <>
@@ -127,46 +169,73 @@ let Main = () => {
         <div className={s.block2}>
           <div className={s.title}>
             <h2>Путь Front End Developer</h2>
-            <button>Скрыть пройденные</button>
+            {!hideCompleted && (
+              <button
+                onClick={() => {
+                  setHideCompleted(!hideCompleted);
+                }}
+              >
+                Скрыть пройденные
+              </button>
+            )}
+
+            {hideCompleted && (
+              <button
+                onClick={() => {
+                  setHideCompleted(!hideCompleted);
+                }}
+              >
+                Показать пройденные
+              </button>
+            )}
+
+            <div className={s.navBtns}>
+              <button>
+                <Icon5 />
+              </button>
+              <button>
+                <Icon6 />
+              </button>
+            </div>
           </div>
 
           <div className={s.content}>
-            <Card
-              title={"Добро пожаловать!"}
-              forWhom={"Для новичка"}
-              section={"Основы работы"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={true}
-              progress={8}
-              countTask={10}
-              started={true}
-            />
-            <Card
-              title={"Начало работы"}
-              forWhom={"Для новичка"}
-              section={"Основы работы"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={8}
-              countTask={10}
-              started={true}
-            />
-            <Card
-              title={"Введение в рабочую среду"}
-              forWhom={"Для новичка"}
-              section={"Основы работы"}
-              description={
-                "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете"
-              }
-              completed={false}
-              progress={8}
-              countTask={10}
-              started={false}
-            />
+            {!hideCompleted &&
+              DATA_BLOCK2 &&
+              DATA_BLOCK2.map((item: any, i: any) => (
+                <Card
+                  key={i}
+                  title={item.title}
+                  forWhom={item.forWhom}
+                  section={item.section}
+                  description={item.description}
+                  completed={item.completed}
+                  progress={item.progress}
+                  countTask={item.countTask}
+                  started={item.started}
+                  buttonText={item.buttonText}
+                />
+              ))}
+
+            {hideCompleted &&
+              DATA_BLOCK2 &&
+              DATA_BLOCK2.map(
+                (item: any, i: any) =>
+                  !item.completed && (
+                    <Card
+                      key={i}
+                      title={item.title}
+                      forWhom={item.forWhom}
+                      section={item.section}
+                      description={item.description}
+                      completed={item.completed}
+                      progress={item.progress}
+                      countTask={item.countTask}
+                      started={item.started}
+                      buttonText={item.buttonText}
+                    />
+                  )
+              )}
           </div>
         </div>
         <div className={s.block3}>
@@ -218,7 +287,6 @@ let Main = () => {
               Не пройденные
             </button>
           </div>
-
           <div className={s.content}>
             {activeBtn === "btn1" &&
               DATA &&
@@ -283,8 +351,7 @@ let Main = () => {
               DATA &&
               DATA.map(
                 (item: any, i: any) =>
-                  item.completed &&
-                  item.completed === true && (
+                  item.completed && (
                     <Card
                       key={i}
                       title={item.title}
@@ -304,8 +371,7 @@ let Main = () => {
               DATA &&
               DATA.map(
                 (item: any, i: any) =>
-                  item.completed &&
-                  item.completed === false && (
+                  !item.completed && (
                     <Card
                       key={i}
                       title={item.title}
