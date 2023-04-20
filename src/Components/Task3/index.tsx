@@ -156,12 +156,21 @@ let Task3 = () => {
     <>
       <div className={s.wrap}>
         <div className={s.container}>
-          <div className={s.element}>
+          <div
+            className={s.element}
+
+          >
             <p>Поиск организации по ИНН</p>
             <input
               onChange={parseINNResult}
               value={selectedByInn}
               onFocus={() => {
+                setSelectedInputId("input_id1");
+              }}
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+              onMouseOver={() => {
                 setSelectedInputId("input_id1");
               }}
               style={
@@ -178,6 +187,14 @@ let Task3 = () => {
                   ? { display: "block" }
                   : { display: "none" }
               }
+              onMouseOver={() => {
+                setSelectedInputId("input_id1");
+              }}
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+
+
             >
               {innData &&
                 innData.map((item: any, i: any) => (
@@ -203,6 +220,12 @@ let Task3 = () => {
               onFocus={() => {
                 setSelectedInputId("input_id2");
               }}
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+              onMouseOver={() => {
+                setSelectedInputId("input_id2");
+              }}
               style={
                 selectedInput === "input_id2"
                   ? { color: "#0078D2" }
@@ -217,6 +240,12 @@ let Task3 = () => {
                   ? { display: "block" }
                   : { display: "none" }
               }
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+              onMouseOver={() => {
+                setSelectedInputId("input_id2");
+              }}
             >
               {nameData &&
                 nameData.map((item: any, i: any) => (
@@ -242,6 +271,12 @@ let Task3 = () => {
               onFocus={() => {
                 setSelectedInputId("input_id3");
               }}
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+              onMouseOver={() => {
+                setSelectedInputId("input_id3");
+              }}
               style={
                 selectedInput === "input_id3"
                   ? { color: "#0078D2" }
@@ -256,6 +291,12 @@ let Task3 = () => {
                   ? { display: "block" }
                   : { display: "none" }
               }
+              onMouseOut={() => {
+                setSelectedInputId("");
+              }}
+              onMouseOver={() => {
+                setSelectedInputId("input_id3");
+              }}
             >
               {addressData &&
                 addressData.map((item: any, i: any) => (
