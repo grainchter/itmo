@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/itmo/static/css/main.5ef29bc5.css",
-    "main.js": "/itmo/static/js/main.52167d13.js",
+    "main.css": "/itmo/static/css/main.8a5912fa.css",
+    "main.js": "/itmo/static/js/main.bcf595fe.js",
     "static/js/787.a89d4e5f.chunk.js": "/itmo/static/js/787.a89d4e5f.chunk.js",
     "static/media/1643855983_1-abrakadabra-fun-p-kot-khaker-3.jpg": "/itmo/static/media/1643855983_1-abrakadabra-fun-p-kot-khaker-3.89ca0c41f9ded899b9c7.jpg",
     "static/media/jpg": "/itmo/static/media/3ee7c609a647d3e26df862e1d8277a97.54b297b87f03adc49549.jpg",
     "index.html": "/itmo/index.html",
-    "main.5ef29bc5.css.map": "/itmo/static/css/main.5ef29bc5.css.map",
-    "main.52167d13.js.map": "/itmo/static/js/main.52167d13.js.map",
+    "main.8a5912fa.css.map": "/itmo/static/css/main.8a5912fa.css.map",
+    "main.bcf595fe.js.map": "/itmo/static/js/main.bcf595fe.js.map",
     "787.a89d4e5f.chunk.js.map": "/itmo/static/js/787.a89d4e5f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ef29bc5.css",
-    "static/js/main.52167d13.js"
+    "static/css/main.8a5912fa.css",
+    "static/js/main.bcf595fe.js"
   ]
 }
