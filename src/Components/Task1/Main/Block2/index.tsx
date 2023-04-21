@@ -7,7 +7,6 @@ import Card from "../Card";
 let Block2 = () => {
   const [hideCompleted, setHideCompleted] = useState<boolean>(false);
   const [slidesToShow, setSlidesToShow] = useState<Array<number>>([0, 1, 2]);
-  const [itemsLength, setItemsLength] = useState<number>(0);
 
   let nextSlide = () => {
     let arr: Array<number> = slidesToShow;
